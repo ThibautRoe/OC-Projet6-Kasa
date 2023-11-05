@@ -1,0 +1,42 @@
+/* TODO : migrer en SASS */
+
+.slider-container {
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
