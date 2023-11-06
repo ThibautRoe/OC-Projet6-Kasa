@@ -1,48 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
 
-    useEffect(() => {
-        function showSlide(slideIndex) {
-            const slides = [...document.getElementsByClassName("slide")]
-            slides.forEach(slide => {
-                slide.style.display = "none"
-            })
-            if (slideIndex < 1) {
-                slides[slides.length - 1].style.display = "initial"
-                setSlideIndex(slides.length)
-                return
-            }
-            if (slideIndex > slides.length) {
-                slides[0].style.display = "initial"
-                setSlideIndex(1)
-                return
-            }
-            else {
-                slides[slideIndex - 1].style.display = "initial"
-            }
-        }
-
-        showSlide(slideIndex)
-    }, [slideIndex])
-
     return (
         <div className="slider-container">
             <div className="slider">
-                {pictures && pictures.map((picture, index) => (
-                    <div key={`picture-${index}`} className="slide">
-                        <img src={picture} alt="Photo d'un logement" />
-                        {pictures.length > 1 && (<p>{`${index + 1}/${pictures.length}`}</p>)}
-                    </div>
-                ))}
+                <div className="slide">
+                    <img src={pictures[slideIndex - 1]} alt="Photo d'un logement" />
+                    {pictures.length > 1 && (<p>{`${slideIndex}/${pictures.length}`}</p>)}
+                </div>
             </div>
             {pictures.length > 1 && (
                 <div className="slider-buttons">
-                    <button className="prev-button" onClick={() => setSlideIndex(slideIndex - 1)}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></button>
-                    <button className="next-button" onClick={() => setSlideIndex(slideIndex + 1)}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></button>
+                    <button className="prev-button" onClick={() => setSlideIndex(slideIndex === 1 ? (pictures.length) : (slideIndex - 1))}>
+                        <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+                    </button>
+                    <button className="next-button" onClick={() => setSlideIndex(slideIndex > (pictures.length - 1) ? 1 : (slideIndex + 1))}>
+                        <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
+                    </button>
                 </div>
             )}
         </div>

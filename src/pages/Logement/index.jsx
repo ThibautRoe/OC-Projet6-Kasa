@@ -9,7 +9,7 @@ import { useFetch } from '../../utils/hooks'
 
 export default function Logement() {
     const { id } = useParams()
-    const { data, isLoading, error } = useFetch("../logements.json")
+    const { data, isLoading, error } = useFetch("../../logements.json")
     const logement = data.filter(item => item.id === id)
 
     return (

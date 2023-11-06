@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import bannerHome from '../../assets/images/banner-home.jpg'
 
 export default function Home() {
-    const apiUrl = `${import.meta.env.VITE_API_URL}/logements`
     const { data, isLoading, error } = useFetch('logements.json')
 
     return (
@@ -24,7 +23,7 @@ export default function Home() {
                     {data && data.map((logement) => (
                         <Link
                             key={`logement-${logement.id}`}
-                            to={`/logement/${logement.id}`}
+                            to={`/logement/${logement.id}/${logement.title.toLowerCase().replace(/ /g, "-")}`}
                         >
                             <Card
                                 title={logement.title}
