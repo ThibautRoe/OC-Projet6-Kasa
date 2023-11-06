@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function Collapse({ title, contentString, contentTable }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -20,5 +20,5 @@ export default function Collapse({ title, contentString, contentTable }) {
                 </>
             )}
         </>
-    );
+    )
 }

@@ -1,5 +1,5 @@
 import Loader from '../../components/Loader'
-import Slider from '../../components/Slider'
+import Slideshow from '../../components/Slideshow'
 import Tag from '../../components/Tag'
 import Star from '../../components/Star'
 import Collapse from '../../components/Collapse'
@@ -22,7 +22,7 @@ export default function About() {
                 <ErrorPage />
             ) : (
                 <>
-                    <Slider pictures={data[0].pictures} />
+                    <Slideshow pictures={data[0].pictures} />
                     <div className='titleAndTags'>
                         <h1>{data[0].title}</h1>
                         <p>{data[0].location}</p>

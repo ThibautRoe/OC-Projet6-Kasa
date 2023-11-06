@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import './index.css'
 
-export default function Slider({ pictures }) {
+export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
 
     useEffect(() => {
