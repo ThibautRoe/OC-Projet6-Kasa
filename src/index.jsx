@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import BasicLayout from './components/BasicLayout'
 import Home from './pages/Home'
-import Detail from './pages/Detail'
+import Logement from './pages/Logement'
 import About from './pages/About'
 import ErrorPage from './pages/ErrorPage'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/logement/:id",
-                element: <Detail />
+                element: <Logement />
             },
             {
                 path: "*",

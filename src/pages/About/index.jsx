@@ -5,8 +5,7 @@ import { useFetch } from '../../utils/hooks'
 import bannerAbout from '../../assets/images/banner-about.jpg'
 
 export default function About() {
-    const apiUrl = `${import.meta.env.VITE_API_URL}/about`
-    const { data, isLoading, error } = useFetch(apiUrl)
+    const { data, isLoading, error } = useFetch("about.json")
 
     return (
         <main>

@@ -7,7 +7,7 @@ import bannerHome from '../../assets/images/banner-home.jpg'
 
 export default function Home() {
     const apiUrl = `${import.meta.env.VITE_API_URL}/logements`
-    const { data, isLoading, error } = useFetch(apiUrl)
+    const { data, isLoading, error } = useFetch('logements.json')
 
     return (
         <main>

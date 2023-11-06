@@ -7,10 +7,10 @@ import ErrorPage from '../ErrorPage'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
 
-export default function About() {
+export default function Logement() {
     const { id } = useParams()
-    const apiUrl = `${import.meta.env.VITE_API_URL}/logements?id=${id}` /* JSON Server permet de filtrer avec ?xx=yy, à voir pour l'API définitive si elle permet de le faire */
-    const { data, isLoading, error } = useFetch(apiUrl)
+    const { data, isLoading, error } = useFetch("../logements.json")
+    const logement = data.filter(item => item.id === id)
 
     return (
         <main>
@@ -18,28 +18,28 @@ export default function About() {
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
                 <Loader />
-            ) : data.length === 0 ? (
+            ) : logement.length === 0 ? (
                 <ErrorPage />
             ) : (
                 <>
-                    <Slideshow pictures={data[0].pictures} />
+                    <Slideshow pictures={logement[0].pictures} />
                     <div className='titleAndTags'>
-                        <h1>{data[0].title}</h1>
-                        <p>{data[0].location}</p>
-                        <Tag tags={data[0].tags} />
+                        <h1>{logement[0].title}</h1>
+                        <p>{logement[0].location}</p>
+                        <Tag tags={logement[0].tags} />
                     </div>
                     <div className='hostAndRating'>
-                        <p>{data[0].host.name}</p>
-                        <img src={data[0].host.picture} alt="Photo de profil" />
-                        <Star rating={data[0].rating} />
+                        <p>{logement[0].host.name}</p>
+                        <img src={logement[0].host.picture} alt="Photo de profil" />
+                        <Star rating={logement[0].rating} />
                     </div>
                     <Collapse
                         title={"Description"}
-                        contentString={data[0].description}
+                        contentString={logement[0].description}
                     />
                     <Collapse
                         title={"Équipements"}
-                        contentTable={data[0].equipments}
+                        contentTable={logement[0].equipments}
                     />
                 </>
             )
