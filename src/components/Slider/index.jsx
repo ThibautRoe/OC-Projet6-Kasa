@@ -9,7 +9,7 @@ export default function Slider({ pictures }) {
             const slides = [...document.getElementsByClassName("slide")]
             slides.forEach(slide => {
                 slide.style.display = "none"
-            });
+            })
             if (slideIndex < 1) {
                 slides[slides.length - 1].style.display = "initial"
                 setSlideIndex(slides.length)
@@ -34,12 +34,16 @@ export default function Slider({ pictures }) {
                 {pictures && pictures.map((picture, index) => (
                     <div key={`picture-${index}`} className="slide">
                         <img src={picture} alt="Photo d'un logement" />
-                        <p>{`${index + 1}/${pictures.length}`}</p>
+                        {pictures.length > 1 && (<p>{`${index + 1}/${pictures.length}`}</p>)}
                     </div>
                 ))}
             </div>
-            <button className="prev-button" onClick={() => setSlideIndex(slideIndex - 1)}>←</button> {/* TODO Changer les flèches */}
-            <button className="next-button" onClick={() => setSlideIndex(slideIndex + 1)}>→</button>
+            {pictures.length > 1 && (
+                <div className="slider-buttons">
+                    <button className="prev-button" onClick={() => setSlideIndex(slideIndex - 1)}>←</button> {/* TODO Changer les flèches */}
+                    <button className="next-button" onClick={() => setSlideIndex(slideIndex + 1)}>→</button>
+                </div>
+            )}
         </div>
     )
 }

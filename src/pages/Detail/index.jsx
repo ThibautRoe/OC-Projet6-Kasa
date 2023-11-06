@@ -3,6 +3,7 @@ import Slider from '../../components/Slider'
 import Tag from '../../components/Tag'
 import Star from '../../components/Star'
 import Collapse from '../../components/Collapse'
+import ErrorPage from '../ErrorPage'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
 
@@ -17,6 +18,8 @@ export default function About() {
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
                 <Loader />
+            ) : data.length === 0 ? (
+                <ErrorPage />
             ) : (
                 <>
                     <Slider pictures={data[0].pictures} />
