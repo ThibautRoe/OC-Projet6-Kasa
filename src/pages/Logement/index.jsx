@@ -42,8 +42,7 @@ export default function Logement() {
                         contentTable={logement[0].equipments}
                     />
                 </>
-            )
-            }
+            )}
         </main >
     )
 }

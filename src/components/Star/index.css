@@ -1,6 +1,6 @@
 /* TODO : migrer en SASS */
 
-[data-prefix="fas"] {
+.coloredStar {
     color: orangered;
 }
 
