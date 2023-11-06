@@ -1,7 +1,7 @@
-export default function Banner({ title, image }) {
+export default function Banner({ image, title }) {
     return (
         <>
-            {image ? <img src={image} alt="Paysage montagneux" /> : <p>Image bannière</p>} {/* TODO : enlever le p et mettre null */}
+            {image ? <img src={image} alt="Paysage montagneux" /> : null}
             {title ? <h1>{title}</h1 > : null}
         </>
     )

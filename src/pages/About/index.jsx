@@ -2,6 +2,7 @@ import Banner from '../../components/Banner'
 import Loader from '../../components/Loader'
 import Collapse from '../../components/Collapse'
 import { useFetch } from '../../utils/hooks'
+import bannerAbout from '../../assets/images/banner-about.jpg'
 
 export default function About() {
     const apiUrl = `${import.meta.env.VITE_API_URL}/about`
@@ -9,7 +10,9 @@ export default function About() {
 
     return (
         <main>
-            <Banner />
+            <Banner
+                image={bannerAbout}
+            />
             <h1 style={{ display: "none" }}>A propos</h1>
             {error ? (
                 <p>Erreur lors du chargement des données depuis l'API</p>

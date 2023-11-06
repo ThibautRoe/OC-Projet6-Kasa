@@ -10,7 +10,6 @@ export function useFetch(url) {
         setLoading(true)
         async function fetchData() {
             try {
-                await new Promise(resolve => setTimeout(resolve, 2000)) /* TODO : timeout à enlever, servait à tester l'affichage du loader */
                 const response = await fetch(url)
                 const data = await response.json()
                 setData(data)

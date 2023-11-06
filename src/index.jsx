@@ -6,6 +6,9 @@ import Home from './pages/Home'
 import Detail from './pages/Detail'
 import About from './pages/About'
 import ErrorPage from './pages/ErrorPage'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 const router = createBrowserRouter([
     {

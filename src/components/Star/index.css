@@ -1,0 +1,9 @@
+/* TODO : migrer en SASS */
+
+[data-prefix="fas"] {
+    color: orangered;
+}
+
+.neutralStar {
+    color: grey;
+}

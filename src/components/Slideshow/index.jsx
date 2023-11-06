@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
@@ -40,8 +41,8 @@ export default function Slideshow({ pictures }) {
             </div>
             {pictures.length > 1 && (
                 <div className="slider-buttons">
-                    <button className="prev-button" onClick={() => setSlideIndex(slideIndex - 1)}>←</button> {/* TODO Changer les flèches */}
-                    <button className="next-button" onClick={() => setSlideIndex(slideIndex + 1)}>→</button>
+                    <button className="prev-button" onClick={() => setSlideIndex(slideIndex - 1)}><FontAwesomeIcon icon="fa-solid fa-chevron-left" /></button>
+                    <button className="next-button" onClick={() => setSlideIndex(slideIndex + 1)}><FontAwesomeIcon icon="fa-solid fa-chevron-right" /></button>
                 </div>
             )}
         </div>
