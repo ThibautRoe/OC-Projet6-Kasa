@@ -4,12 +4,15 @@ import { NavLink } from "react-router-dom"
 
 export default function Header() {
     return (
-        <header>
-            <img src={LogoLarge} alt="Logo Kasa" /> {/* TODO Gérer aussi le cas de figure avec le logo small */}
+        <header className="header">
+            <picture className="header__logo"> {/* TODO Ajuster la largeur de la media query si besoin */}
+                <source media="(max-width: 650px)" srcSet={LogoSmall} />
+                <img src={LogoLarge} alt="Logo Kasa" />
+            </picture>
             <nav>
                 <ul>
                     <li>
-                        <NavLink to={"/"}> {/* TODO Faire le CSS, NavLink permet d'avoir la classe "active" mise automatiquement sur le lien "a" quand on est sur la page du lien */}
+                        <NavLink to={"/"}>
                             Accueil
                         </NavLink>
                     </li>
