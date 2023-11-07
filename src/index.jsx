@@ -5,7 +5,8 @@ import BasicLayout from './components/BasicLayout'
 import Home from './pages/Home'
 import Logement from './pages/Logement'
 import About from './pages/About'
-import ErrorPage from './pages/ErrorPage'
+import PageNotFound from './pages/PageNotFound'
+import { Navigate } from 'react-router-dom'
 
 const router = createBrowserRouter([
     {
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
                 element: <Logement />
             },
             {
+                path: "/404",
+                element: <PageNotFound />
+            },
+            {
                 path: "*",
-                element: <ErrorPage />
+                element: <Navigate to="/404" />
             }
         ],
     },
