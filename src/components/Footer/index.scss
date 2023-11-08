@@ -1,0 +1,15 @@
+.footer {
+    padding-top: 35px;
+    height: 209px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+    &__credits {
+        color: white;
+        font-size: 24px;
+    }
+}

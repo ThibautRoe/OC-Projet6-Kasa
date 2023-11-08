@@ -1,24 +1,25 @@
 import LogoLarge from '../../assets/images/logo-large.png'
 import LogoSmall from '../../assets/images/logo-small.png'
 import { NavLink } from "react-router-dom"
+import './index.scss'
 
 export default function Header() {
     return (
         <header className="header">
-            <picture className="header__logo"> {/* TODO Ajuster la largeur de la media query si besoin */}
+            <picture> {/* TODO Ajuster la largeur de la media query si besoin */}
                 <source media="(max-width: 650px)" srcSet={LogoSmall} />
-                <img src={LogoLarge} alt="Logo Kasa" />
+                <img className="header__logo" loading="lazy" src={LogoLarge} alt="Logo Kasa" />
             </picture>
-            <nav>
-                <ul>
-                    <li>
+            <nav className="navbar">
+                <ul className="navbar__list">
+                    <li className="navbar__link">
                         <NavLink to={"/"}>
                             Accueil
                         </NavLink>
                     </li>
-                    <li>
+                    <li className="navbar__link">
                         <NavLink to={"/a-propos"}>
-                            A propos
+                            A Propos
                         </NavLink>
                     </li>
                 </ul>

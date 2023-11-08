@@ -1,0 +1,27 @@
+@use '../../assets/styles/variables';
+
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 140px 0;
+
+    &>* {
+        color: variables.$primary-color;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 288px;
+    }
+
+    &__subtitle {
+        font-size: 36px;
+    }
+
+    & a {
+        text-decoration: underline;
+    }
+}

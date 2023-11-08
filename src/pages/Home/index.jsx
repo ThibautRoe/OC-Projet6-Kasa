@@ -9,7 +9,7 @@ export default function Home() {
     const { data, isLoading, error } = useFetch('logements.json')
 
     return (
-        <main>
+        <main className="home">
             <Banner
                 image={bannerHome}
                 title={"Chez vous, partout et ailleurs"}
@@ -19,7 +19,7 @@ export default function Home() {
             ) : isLoading ? (
                 <Loader />
             ) : (
-                <section>
+                <section className="home__cards">
                     {data && data.map((logement) => (
                         <Link
                             key={`logement-${logement.id}`}

@@ -1,0 +1,28 @@
+@use '../../assets/styles/reset';
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: 500 700;
+    src: url("../../assets/webfonts/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+html {
+    max-width: 1440px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.active {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}

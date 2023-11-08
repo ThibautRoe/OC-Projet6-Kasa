@@ -3,12 +3,13 @@ import Loader from '../../components/Loader'
 import Collapse from '../../components/Collapse'
 import { useFetch } from '../../utils/hooks'
 import bannerAbout from '../../assets/images/banner-about.jpg'
+import './index.scss'
 
 export default function About() {
     const { data, isLoading, error } = useFetch("about.json")
 
     return (
-        <main>
+        <main className="about">
             <Banner
                 image={bannerAbout}
             />
@@ -18,10 +19,11 @@ export default function About() {
             ) : isLoading ? (
                 <Loader />
             ) : (
-                <section>
+                <section className="collapses collapses--about">
                     {data && data.map((item) => (
                         <Collapse
                             key={`collapse-${item.title}`}
+                            className="about"
                             title={item.title}
                             contentString={item.content}
                         />

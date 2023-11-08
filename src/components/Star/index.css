@@ -1,9 +1,9 @@
 /* TODO : migrer en SASS */
 
-.coloredStar {
+.logement__star.logement__star--colored {
     color: orangered;
 }
 
-.neutralStar {
+.logement__star.logement__star--neutral {
     color: grey;
 }

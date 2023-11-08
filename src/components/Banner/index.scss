@@ -1,0 +1,28 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-self: center;
+    position: relative;
+    min-height: 223px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1240px;
+    padding: 93px 80px 85px;
+
+    &__picture {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        position: relative;
+        color: #fff;
+        align-self: center;
+        white-space: nowrap;
+        font: 500 48px/142.6% Montserrat, -apple-system, Roboto, Helvetica,
+            sans-serif;
+    }
+}

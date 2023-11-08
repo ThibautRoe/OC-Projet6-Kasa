@@ -1,5 +1,7 @@
 export default function Tag({ tags }) {
     return (
-        tags.map((tag, index) => (<p key={`tag-${index}`} className="tag">{tag}</p>))
+        <div className="logement__tags">
+            {tags.map((tag, index) => (<p key={`tag-${index}`} className="logement__tag">{tag}</p>))}
+        </div>
     )
 }

@@ -1,0 +1,19 @@
+@use '../../assets/styles/variables';
+
+.header {
+    margin: 45px 100px 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    &__list {
+        display: flex;
+        gap: 60px;
+    }
+
+    &__link a {
+        color: variables.$primary-color;
+    }
+}

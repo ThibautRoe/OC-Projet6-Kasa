@@ -1,0 +1,51 @@
+@use '../../assets/styles/variables';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 38px;
+}
+
+.collapses {
+    display: flex;
+
+    &--about {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        padding: 0 109px;
+    }
+}
+
+.collapse {
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: variables.$primary-color;
+        color: white;
+        border-radius: 5px;
+        height: 53px;
+        padding: 10px 20px 10px 10px;
+    }
+
+    &__title--about {
+        font-size: 24px;
+    }
+
+    &__button {
+        padding-top: 5px;
+
+        svg {
+            height: 1.5em;
+        }
+    }
+
+    &__content {
+        color: variables.$primary-color;
+        padding: 20px;
+    }
+}

@@ -6,6 +6,7 @@ import Collapse from '../../components/Collapse'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../utils/hooks'
 import { Navigate } from 'react-router-dom'
+import './index.scss'
 
 export default function Logement() {
     const { id, title } = useParams()
@@ -20,7 +21,7 @@ export default function Logement() {
     }
 
     return (
-        <main>
+        <main className="logement">
             {error ? (
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
@@ -32,24 +33,34 @@ export default function Logement() {
             ) : (
                 <>
                     <Slideshow pictures={logement[0].pictures} />
-                    <div className='titleAndTags'>
-                        <h1>{logement[0].title}</h1>
-                        <p>{logement[0].location}</p>
-                        <Tag tags={logement[0].tags} />
+                    <div className="logement__details">
+                        <h1 className="logement__title">{logement[0].title}</h1>
+                        <p className="logement__location">{logement[0].location}</p>
+                        {logement[0].tags ? (<Tag tags={logement[0].tags} />) : null}
                     </div>
-                    <div className='hostAndRating'>
-                        <p>{logement[0].host.name}</p>
-                        <img src={logement[0].host.picture} alt="Photo de profil" />
+                    <div className="logement__host-and-rating">
+                        <div className="logement__host">
+                            <p className="logement__host-name">{logement[0].host.name}</p>
+                            <img className="logement__host-picture" loading="lazy" src={logement[0].host.picture} alt="Photo de profil" />
+                        </div>
                         <Star rating={logement[0].rating} />
                     </div>
-                    <Collapse
-                        title={"Description"}
-                        contentString={logement[0].description}
-                    />
-                    <Collapse
-                        title={"Équipements"}
-                        contentTable={logement[0].equipments}
-                    />
+                    <div className="collapses collapses--logement">
+                        {logement[0].description ? (
+                            <Collapse
+                                className="logement"
+                                title="Description"
+                                contentString={logement[0].description}
+                            />
+                        ) : null}
+                        {logement[0].equipments ? (
+                            <Collapse
+                                className="logement"
+                                title="Équipements"
+                                contentTable={logement[0].equipments}
+                            />
+                        ) : null}
+                    </div>
                 </>
             )}
         </main >
