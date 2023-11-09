@@ -1,0 +1,67 @@
+@use '../../assets/styles/variables';
+
+.collapses {
+    width: 100%;
+}
+
+.collapse {
+    width: 100%;
+
+    &[open] {
+        background-color: variables.$light-grey;
+    }
+
+    &--about {
+        border-radius: 5px;
+    }
+
+    &--logement {
+        border-radius: 10px;
+    }
+
+    &__title {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: variables.$primary-color;
+        color: variables.$secondary-color;
+        width: 100%;
+        height: 53px;
+        padding: 10px 20px 10px 10px;
+
+        &--about {
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        &--logement {
+            border-radius: 10px;
+        }
+    }
+
+    &__button {
+        padding-top: 6px;
+
+        svg {
+            font-size: 28px;
+            rotate: 0;
+            transition: rotate 300ms ease-in-out;
+
+            .collapse[open] & {
+                rotate: -180deg;
+                transition: rotate 300ms ease-in-out;
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+//Fix for Safari displaying the details marker (triangle on the left) even with display: flex;
+summary::-webkit-details-marker {
+    display: none
+}

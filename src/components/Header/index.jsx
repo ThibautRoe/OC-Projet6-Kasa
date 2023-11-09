@@ -6,10 +6,12 @@ import './index.scss'
 export default function Header() {
     return (
         <header className="header">
-            <picture> {/* TODO Ajuster la largeur de la media query si besoin */}
-                <source media="(max-width: 650px)" srcSet={LogoSmall} />
-                <img className="header__logo" loading="lazy" src={LogoLarge} alt="Logo Kasa" />
-            </picture>
+            <NavLink to={"/"}>
+                <picture> {/* TODO Ajuster la largeur de la media query si besoin */}
+                    <source media="(max-width: 650px)" srcSet={LogoSmall} />
+                    <img className="header__logo" loading="lazy" src={LogoLarge} alt="Logo Kasa" />
+                </picture>
+            </NavLink>
             <nav className="navbar">
                 <ul className="navbar__list">
                     <li className="navbar__link">

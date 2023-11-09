@@ -1,0 +1,24 @@
+@use '../../assets/styles/variables';
+
+.home {
+    padding: 0 100px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    width: 100%;
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 50px 60px;
+        background-color: variables.$light-grey;
+        border-radius: 25px;
+        padding: 50px;
+    }
+
+    a {
+        flex: 1;
+    }
+}

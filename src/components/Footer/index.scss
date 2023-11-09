@@ -1,5 +1,7 @@
+@use '../../assets/styles/variables';
+
 .footer {
-    padding-top: 35px;
+    padding: 35px;
     height: 209px;
     display: flex;
     flex-direction: column;
@@ -9,7 +11,7 @@
     background-color: black;
 
     &__credits {
-        color: white;
+        color: variables.$secondary-color;
         font-size: 24px;
     }
 }

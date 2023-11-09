@@ -1,9 +1,0 @@
-/* TODO : migrer en SASS */
-
-.logement__star.logement__star--colored {
-    color: orangered;
-}
-
-.logement__star.logement__star--neutral {
-    color: grey;
-}

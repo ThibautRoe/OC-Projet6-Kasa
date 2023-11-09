@@ -5,15 +5,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .navbar {
+
     &__list {
         display: flex;
         gap: 60px;
     }
 
-    &__link a {
-        color: variables.$primary-color;
+    &__link {
+        a {
+            color: variables.$primary-color;
+        }
     }
 }

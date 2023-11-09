@@ -11,6 +11,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
+    line-height: 1.5em;
 }
 
 html {
@@ -20,9 +21,9 @@ html {
 
 a {
     text-decoration: none;
-}
-
-a.active {
-    text-decoration: underline;
     text-underline-offset: 2px;
+
+    &.active {
+        text-decoration: underline;
+    }
 }

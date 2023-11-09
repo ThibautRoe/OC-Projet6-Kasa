@@ -1,1 +1,92 @@
 @use '../../assets/styles/variables';
+
+.logement {
+    padding: 0 100px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    color: variables.$primary-color;
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 36px;
+    }
+
+    &__location {
+        margin-bottom: 20px;
+    }
+
+    &__tags {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 115px;
+        height: 25px;
+        background-color: variables.$primary-color;
+        color: variables.$secondary-color;
+        font-size: 14px;
+        padding: 0 20px;
+        border-radius: 10px;
+    }
+
+    &__host-and-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 21px;
+        width: 190px;
+    }
+
+    &__host {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    &__host-name {
+        width: 100%;
+        text-align: right;
+    }
+
+    &__host-picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    &__rating {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        svg {
+            font-size: 24px;
+        }
+    }
+}
+
+.collapses {
+    &--logement {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 76px;
+    }
+}

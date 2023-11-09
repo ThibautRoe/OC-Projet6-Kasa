@@ -18,9 +18,9 @@ export default function About() {
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
                 <Loader />
-            ) : (
+            ) : ((data && data.length > 0) && (
                 <section className="collapses collapses--about">
-                    {data && data.map((item) => (
+                    {data.map((item) => (
                         <Collapse
                             key={`collapse-${item.title}`}
                             className="about"
@@ -29,7 +29,7 @@ export default function About() {
                         />
                     ))}
                 </section>
-            )}
+            ))}
         </main >
     )
 }

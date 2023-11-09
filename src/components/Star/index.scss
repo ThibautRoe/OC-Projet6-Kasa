@@ -1,0 +1,11 @@
+@use '../../assets/styles/variables';
+
+.logement__star {
+    &--colored {
+        color: variables.$primary-color;
+    }
+
+    &--neutral {
+        color: variables.$star-grey;
+    }
+}

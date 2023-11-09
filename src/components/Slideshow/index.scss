@@ -1,0 +1,45 @@
+@use '../../assets/styles/variables';
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 415px;
+
+    &__picture {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+
+    &__count {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 25px;
+        color: variables.$secondary-color;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: variables.$secondary-color;
+        border: none;
+        padding: 25px;
+        background: none;
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+
+        svg {
+            font-size: 72px;
+        }
+    }
+}
