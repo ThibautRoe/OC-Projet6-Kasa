@@ -11,6 +11,8 @@
     &__cards {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         gap: 50px 60px;
         background-color: variables.$light-grey;
@@ -19,6 +21,9 @@
     }
 
     a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex: 1;
     }
 }

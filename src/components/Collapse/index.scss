@@ -7,16 +7,18 @@
 .collapse {
     width: 100%;
 
-    &[open] {
-        background-color: variables.$light-grey;
-    }
+    &__detail {
+        &[open] {
+            background-color: variables.$light-grey;
+        }
 
-    &--about {
-        border-radius: 5px;
-    }
+        &--about {
+            border-radius: 5px 5px 0 0;
+        }
 
-    &--logement {
-        border-radius: 10px;
+        &--logement {
+            border-radius: 10px 10px 0 0;
+        }
     }
 
     &__title {
@@ -46,22 +48,53 @@
         svg {
             font-size: 28px;
             rotate: 0;
-            transition: rotate 300ms ease-in-out;
+            transition: rotate 500ms ease-in-out;
 
-            .collapse[open] & {
+            .collapse__detail[open] & {
                 rotate: -180deg;
-                transition: rotate 300ms ease-in-out;
+                transition: rotate 500ms ease-in-out;
             }
         }
     }
 
     &__content {
         width: 100%;
-        padding: 20px;
+        background-color: variables.$light-grey;
+        /*BEGIN animation dependent rules */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 500ms ease-in-out;
+
+        &--about {
+            border-radius: 0 0 5px 5px;
+        }
+
+        &--logement {
+            border-radius: 0 0 10px 10px;
+        }
+
+        p:first-child {
+            padding-top: 20px;
+        }
+
+        p {
+            padding: 0 20px;
+        }
+
+        p:last-child {
+            padding-bottom: 20px;
+        }
+
+        .collapse__detail[open]+& {
+            max-height: 300px;
+            transition: max-height 500ms ease-in-out;
+        }
+
+        /*END animation dependent rules */
     }
 }
 
-//Fix for Safari displaying the details marker (triangle on the left) even with display: flex;
+//Fix for Safari displaying the details marker (triangle on the left) even with display: block; or display: flex;
 summary::-webkit-details-marker {
     display: none
 }
