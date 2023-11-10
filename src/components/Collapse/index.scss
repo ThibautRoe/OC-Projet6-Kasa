@@ -1,4 +1,5 @@
 @use '../../assets/styles/variables';
+@use '../../assets/styles/functions';
 
 .collapses {
     width: 100%;
@@ -29,12 +30,12 @@
         background-color: variables.$primary-color;
         color: variables.$secondary-color;
         width: 100%;
-        height: 53px;
-        padding: 10px 20px 10px 10px;
+        height: functions.getResponsiveSize(30, 53);
+        padding: 10px functions.getResponsiveSize(15, 20) 10px 10px;
 
         &--about {
             border-radius: 5px;
-            font-size: 24px;
+            font-size: functions.getResponsiveSize(13, 24);
         }
 
         &--logement {
@@ -46,8 +47,7 @@
         padding-top: 6px;
 
         svg {
-            font-size: 28px;
-            rotate: 0;
+            font-size: functions.getResponsiveSize(20, 28);
             transition: rotate 500ms ease-in-out;
 
             .collapse__detail[open] & {
@@ -60,10 +60,6 @@
     &__content {
         width: 100%;
         background-color: variables.$light-grey;
-        /*BEGIN animation dependent rules */
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 500ms ease-in-out;
 
         &--about {
             border-radius: 0 0 5px 5px;
@@ -79,16 +75,24 @@
 
         p {
             padding: 0 20px;
+            font-size: functions.getResponsiveSize(12, 18);
         }
 
         p:last-child {
             padding-bottom: 20px;
         }
 
+        /*BEGIN animation dependent rules
+        See this trick : https://dev.to/jgustavoas/solved-how-to-fully-animate-the-details-html-element-with-only-css-and-no-javascript-55ek */
+
         .collapse__detail[open]+& {
-            max-height: 300px;
+            max-height: 600px;
             transition: max-height 500ms ease-in-out;
         }
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 500ms ease-in-out;
 
         /*END animation dependent rules */
     }

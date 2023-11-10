@@ -7,8 +7,8 @@ export default function Header() {
     return (
         <header className="header">
             <NavLink to={"/"}>
-                <picture> {/* TODO Ajuster la largeur de la media query si besoin */}
-                    <source media="(max-width: 650px)" srcSet={LogoSmall} />
+                <picture>
+                    <source media="(max-width: 690px)" srcSet={LogoSmall} />
                     <img className="header__logo" loading="lazy" src={LogoLarge} alt="Logo Kasa" />
                 </picture>
             </NavLink>

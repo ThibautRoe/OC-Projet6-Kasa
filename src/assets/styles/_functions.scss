@@ -1,0 +1,5 @@
+@use './variables';
+
+@function getResponsiveSize($minSize, $maxSize) {
+    @return clamp(#{$minSize}px, calc(#{$minSize}px + (100vw - #{variables.$min-width}px) / (#{variables.$max-width} - #{variables.$min-width}) * ($maxSize - $minSize)), #{$maxSize}px);
+}

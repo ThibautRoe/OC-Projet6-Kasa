@@ -10,6 +10,15 @@
         height: 100%;
         border-radius: 25px;
         object-fit: cover;
+        transition: opacity 500ms linear;
+
+        &--fadein {
+            opacity: 1;
+        }
+
+        &--fadeout {
+            opacity: 0;
+        }
     }
 
     &__count {

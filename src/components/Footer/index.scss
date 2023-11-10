@@ -1,17 +1,20 @@
 @use '../../assets/styles/variables';
+@use '../../assets/styles/functions';
 
 .footer {
     padding: 35px;
     height: 209px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: functions.getResponsiveSize(15, 40);
     justify-content: center;
     align-items: center;
     background-color: black;
 
     &__credits {
+        width: 39%;
         color: variables.$secondary-color;
-        font-size: 24px;
+        text-align: center;
+        font-size: functions.getResponsiveSize(12, 24);
     }
 }

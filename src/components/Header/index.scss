@@ -1,23 +1,31 @@
 @use '../../assets/styles/variables';
+@use '../../assets/styles/functions';
 
 .header {
-    margin: 45px 100px 50px 100px;
+    margin: functions.getResponsiveSize(20, 45) 100px functions.getResponsiveSize(27, 50) 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .navbar {
 
     &__list {
         display: flex;
-        gap: 60px;
+        gap: functions.getResponsiveSize(26, 60);
     }
 
     &__link {
         a {
             color: variables.$primary-color;
+            font-size: functions.getResponsiveSize(12, 24);
+
+            @media screen and (max-width: 690px) {
+                text-transform: uppercase;
+            }
         }
     }
 }
+
+
+//TODO gérer la largeur sur petits écrans
