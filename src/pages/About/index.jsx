@@ -5,6 +5,10 @@ import { useFetch } from '../../utils/hooks'
 import bannerAbout from '../../assets/images/banner-about.jpg'
 import './index.scss'
 
+/**
+ * 
+ * @returns About component
+ */
 export default function About() {
     const { data, isLoading, error } = useFetch("about.json")
 

@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom'
 import bannerHome from '../../assets/images/banner-home.jpg'
 import './index.scss'
 
+/**
+ * 
+ * @returns Home component
+ */
 export default function Home() {
     const { data, isLoading, error } = useFetch('logements.json')
 

@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
 
+/**
+ * 
+ * @returns PageNotFound component
+ */
 export default function PageNotFound() {
     return (
         <main className="page-not-found">

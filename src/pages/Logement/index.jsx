@@ -9,6 +9,10 @@ import { Navigate } from 'react-router-dom'
 import GenericAvatar from '../../assets/images/generic-avatar.webp'
 import './index.scss'
 
+/**
+ * 
+ * @returns Logement component
+ */
 export default function Logement() {
     const { id, title } = useParams()
     const { data, isLoading, error } = useFetch("../../logements.json")
