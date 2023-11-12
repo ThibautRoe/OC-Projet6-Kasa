@@ -38,7 +38,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run build && cp ./dist/index.html ./dist/404.html
+        #There is a GitHub’s 404 error when we refresh the page on children path relative to the basename route (e.g. /about). This is because GitHub Pages is looking for about.html while our app is a single page application which has only index.html. The above line with "cp ./dist/index.html ./dist/404.html" prevents this.
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
