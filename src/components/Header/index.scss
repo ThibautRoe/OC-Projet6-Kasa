@@ -8,6 +8,9 @@
     align-items: center;
 
     &__logo {
+        width: functions.getResponsiveSize(145, 210);
+        color: variables.$primary-color;
+
         @media screen and (max-width: 375px) {
             width: calc(30px + (100vw - 200px) / (375 - 200) * (145 - 30));
         }
@@ -15,20 +18,17 @@
 }
 
 .navbar {
-
     &__list {
         display: flex;
         gap: functions.getResponsiveSize(26, 60);
     }
 
     &__link {
-        a {
-            color: variables.$primary-color;
-            font-size: functions.getResponsiveSize(12, 24);
+        color: variables.$primary-color;
+        font-size: functions.getResponsiveSize(12, 24);
 
-            @media screen and (max-width: 690px) {
-                text-transform: uppercase;
-            }
+        @media screen and (max-width: 690px) {
+            text-transform: uppercase;
         }
     }
 }

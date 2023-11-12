@@ -11,6 +11,11 @@
     align-items: center;
     background-color: black;
 
+    &__logo {
+        width: 122px;
+        color: variables.$secondary-color;
+    }
+
     &__credits {
         width: 39%;
         color: variables.$secondary-color;
