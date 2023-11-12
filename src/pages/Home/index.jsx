@@ -20,7 +20,7 @@ export default function Home() {
                 title={"Chez vous, partout et ailleurs"}
             />
             {error ? (
-                <p>Erreur lors du chargement des données depuis l'API</p>
+                <p>{`Erreur lors du chargement des données depuis l'API`}</p>
             ) : isLoading ? (
                 <Loader />
             ) : ((data && data.length > 0) && (

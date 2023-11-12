@@ -40,7 +40,7 @@ export default function Slideshow({ pictures }) {
 
     return (
         <div className="slideshow">
-            <img className={pictureClassName} loading="lazy" src={pictures[slideIndex - 1]} alt="Photo d'un logement" />
+            <img className={pictureClassName} src={pictures[slideIndex - 1]} alt="Photo d'un logement" />
             {(pictures.length > 1) && (
                 <>
                     <p className="slideshow__count">{`${slideIndex}/${pictures.length}`}</p>

@@ -30,7 +30,7 @@ export default function Logement() {
     return (
         <main className="logement">
             {error ? (
-                <p>Erreur lors du chargement des données depuis l'API</p>
+                <p>{`Erreur lors du chargement des données depuis l'API`}</p>
             ) : isLoading ? (
                 <Loader />
             ) : logement.length === 0 ? (

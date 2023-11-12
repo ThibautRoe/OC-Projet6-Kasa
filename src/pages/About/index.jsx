@@ -19,7 +19,7 @@ export default function About() {
             />
             <h1 style={{ display: "none" }}>A propos</h1>
             {error ? (
-                <p>Erreur lors du chargement des données depuis l'API</p>
+                <p>{`Erreur lors du chargement des données depuis l'API`}</p>
             ) : isLoading ? (
                 <Loader />
             ) : ((data && data.length > 0) && (
