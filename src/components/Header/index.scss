@@ -2,10 +2,16 @@
 @use '../../assets/styles/functions';
 
 .header {
-    margin: functions.getResponsiveSize(20, 45) 100px functions.getResponsiveSize(27, 50) 100px;
+    margin: functions.getResponsiveSize(20, 45) functions.getResponsiveSize(20, 100) functions.getResponsiveSize(27, 50) functions.getResponsiveSize(20, 100);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__logo {
+        @media screen and (max-width: 375px) {
+            width: calc(30px + (100vw - 200px) / (375 - 200) * (145 - 30));
+        }
+    }
 }
 
 .navbar {
@@ -26,6 +32,3 @@
         }
     }
 }
-
-
-//TODO gérer la largeur sur petits écrans

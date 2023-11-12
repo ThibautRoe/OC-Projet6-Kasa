@@ -39,7 +39,8 @@
         }
 
         &--logement {
-            border-radius: 10px;
+            border-radius: functions.getResponsiveSize(5, 10);
+            font-size: functions.getResponsiveSize(13, 18);
         }
     }
 

@@ -1,14 +1,15 @@
 @use '../../assets/styles/variables';
+@use '../../assets/styles/functions';
 
 .slideshow {
     position: relative;
     width: 100%;
-    height: 415px;
+    height: functions.getResponsiveSize(255, 415);
 
     &__picture {
         width: 100%;
         height: 100%;
-        border-radius: 25px;
+        border-radius: functions.getResponsiveSize(10, 25);
         object-fit: cover;
         transition: opacity 500ms linear;
 
@@ -28,6 +29,7 @@
         transform: translate(-50%, 0);
         padding: 25px;
         color: variables.$secondary-color;
+        font-size: functions.getResponsiveSize(14, 18);
     }
 
     &__button {
@@ -36,7 +38,7 @@
         transform: translate(0, -50%);
         color: variables.$secondary-color;
         border: none;
-        padding: 25px;
+        padding: functions.getResponsiveSize(7, 25);
         background: none;
 
         &--prev {
@@ -48,7 +50,7 @@
         }
 
         svg {
-            font-size: 72px;
+            font-size: functions.getResponsiveSize(24, 72);
         }
     }
 }

@@ -2,7 +2,7 @@
 @use '../../assets/styles/functions';
 
 .home {
-    padding: 0 functions.getResponsiveSize(19, 100);
+    padding: 0 functions.getResponsiveSize(20, 100);
     margin-bottom: functions.getResponsiveSize(27, 50);
     display: flex;
     flex-direction: column;

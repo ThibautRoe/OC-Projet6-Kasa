@@ -7,6 +7,7 @@ export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
     const [pictureClassName, setPictureClassName] = useState("slideshow__picture slideshow__picture--fadein")
 
+    //Handle prev / next picture loading and add a fadeout / fadein transition using className and CSS
     function prevPicture() {
         setPictureClassName("slideshow__picture slideshow__picture--fadeout")
         setTimeout(() => {
@@ -23,6 +24,7 @@ export default function Slideshow({ pictures }) {
         }, 500)
     }
 
+    // Handle left / right arrow key press on keyboard to change picture
     useEffect(() => {
         function keyPressHandler(e) {
             if (e.key === "ArrowLeft") { prevPicture() }
