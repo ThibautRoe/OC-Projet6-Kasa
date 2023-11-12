@@ -8,6 +8,8 @@
     flex-direction: column;
     gap: 43px;
     width: 100%;
+    align-items: center;
+    color: variables.$primary-color;
 
     &__cards {
         display: grid;
