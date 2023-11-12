@@ -1,9 +1,14 @@
 NodeJS version used for this projet : 20.9.0
+
 NPM version used for this projet : 10.1.0
 
+
 Install : npm install
+
 Run (localhost only) : npm run dev
+
 Run (expose localhost on local network) : npm run host
+
 Build : npm run build
 
 
