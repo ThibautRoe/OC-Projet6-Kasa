@@ -49,7 +49,7 @@ export default function Logement() {
                         <div className="logement__host-and-rating">
                             <div className="logement__host">
                                 <p className="logement__host-name">{logement[0].host?.name && logement[0].host.name}</p>
-                                <img className="logement__host-picture" loading="lazy" src={logement[0].host?.picture ? logement[0].host.picture : GenericAvatar} alt="Photo de profil" />
+                                <img className="logement__host-picture" src={logement[0].host?.picture ? logement[0].host.picture : GenericAvatar} alt="Photo de profil" />
                             </div>
                             <Star rating={logement[0].rating && logement[0].rating} />
                         </div>
