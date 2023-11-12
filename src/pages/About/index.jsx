@@ -2,7 +2,7 @@ import Banner from '../../components/Banner'
 import Loader from '../../components/Loader'
 import Collapse from '../../components/Collapse'
 import { useFetch } from '../../utils/hooks'
-import bannerAbout from '../../assets/images/banner-about.jpg'
+import bannerAbout from '../../assets/images/banner-about.webp'
 import './index.scss'
 
 /**

@@ -3,7 +3,7 @@ import Loader from '../../components/Loader'
 import Card from '../../components/Card'
 import { useFetch } from '../../utils/hooks'
 import { Link } from 'react-router-dom'
-import bannerHome from '../../assets/images/banner-home.jpg'
+import bannerHome from '../../assets/images/banner-home.webp'
 import './index.scss'
 
 /**
