@@ -17,7 +17,6 @@ export default function About() {
             <Banner
                 image={bannerAbout}
             />
-            <h1 style={{ display: "none" }}>A propos</h1>
             {error ? (
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
