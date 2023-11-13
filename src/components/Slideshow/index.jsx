@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import './index.scss'
 
-
-
+/**
+ * 
+ * @param {object} pictures 
+ * @returns {JSX} Slideshow Component
+ */
 export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
     const [pictureClassName, setPictureClassName] = useState("slideshow__picture slideshow__picture--fadein")

@@ -1,7 +1,14 @@
 import './index.scss'
 
+/**
+ * 
+ * @param {string} className
+ * @param {string} title
+ * @param {string} contentString
+ * @param {object} contentTable
+ * @returns {JSX} Collapse Component
+ */
 export default function Collapse({ className, title, contentString, contentTable }) {
-
     return (
         <>
             {title && (

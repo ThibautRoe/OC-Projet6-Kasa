@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {object} tags 
+ * @returns {JSX} Tag Component
+ */
 export default function Tag({ tags }) {
     return (
         <div className="logement__tags">

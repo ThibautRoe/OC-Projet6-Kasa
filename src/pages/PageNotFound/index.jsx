@@ -3,7 +3,7 @@ import './index.scss'
 
 /**
  * 
- * @returns PageNotFound component
+ * @returns {JSX} PageNotFound Component
  */
 export default function PageNotFound() {
     return (

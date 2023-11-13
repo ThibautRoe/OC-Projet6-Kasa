@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom"
 import './index.scss'
 
+/**
+ * 
+ * @returns {JSX} Header Component
+ */
 export default function Header() {
     return (
         <header className="header">

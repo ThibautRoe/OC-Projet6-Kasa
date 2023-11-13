@@ -11,7 +11,7 @@ import './index.scss'
 
 /**
  * 
- * @returns Logement component
+ * @returns {JSX} Logement Component
  */
 export default function Logement() {
     const { id, title } = useParams()

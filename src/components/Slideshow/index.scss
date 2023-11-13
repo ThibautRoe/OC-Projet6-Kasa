@@ -30,6 +30,10 @@
         padding: 25px;
         color: variables.$secondary-color;
         font-size: functions.getResponsiveSize(14, 18);
+
+        @media screen and (max-width: 690px) {
+            display: none;
+        }
     }
 
     &__button {

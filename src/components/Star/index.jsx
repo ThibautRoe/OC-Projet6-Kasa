@@ -1,5 +1,10 @@
 import './index.scss'
 
+/**
+ * 
+ * @param {string} rating 
+ * @returns {JSX} Star Component
+ */
 export default function Star({ rating }) {
     const coloredStarNumber = Array.apply(null, { length: rating })
     const nonColoredStarNumber = Array.apply(null, { length: 5 - rating })

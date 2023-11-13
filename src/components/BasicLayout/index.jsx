@@ -3,6 +3,10 @@ import Header from '../Header'
 import Footer from '../Footer'
 import './index.scss'
 
+/**
+ * 
+ * @returns {JSX} BasicLayout Component
+ */
 export default function BasicLayout() {
     return (
         <>

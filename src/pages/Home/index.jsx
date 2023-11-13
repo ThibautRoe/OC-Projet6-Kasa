@@ -8,7 +8,7 @@ import './index.scss'
 
 /**
  * 
- * @returns Home component
+ * @returns {JSX} Home Component
  */
 export default function Home() {
     const { data, isLoading, error } = useFetch('logements.json')

@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 
 /**
  * 
- * @param {string} url : url de l'API
- * @returns {object} data ; {boolean} isLoading ; {boolean} error
+ * @param {string} url
+ * @returns {object} data
+ * @returns {boolean} isLoading
+ * @returns {boolean} error
  */
 export function useFetch(url) {
     const [data, setData] = useState([])

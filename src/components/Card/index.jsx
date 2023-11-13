@@ -1,5 +1,11 @@
 import './index.scss'
 
+/**
+ * 
+ * @param {string} title
+ * @param {string} cover
+ * @returns {JSX} Card Component
+ */
 export default function Card({ title, cover }) {
     return (
         <>
