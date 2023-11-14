@@ -7,10 +7,15 @@ export default defineConfig(({ command }) => {
         plugins: [react()],
         base: '/',
     }
-
-    if (command !== 'serve') {
-        config.base = '/OC-Projet6-Kasa/'
-    }
-
+    
+  if (command === 'serve') {
+    // dev specific config
     return config
+  }
+  
+  else {
+    // command === 'build'
+    config.base = '/OC-Projet6-Kasa/'
+    return config
+  }
 })
