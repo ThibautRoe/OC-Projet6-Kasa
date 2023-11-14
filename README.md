@@ -7,9 +7,13 @@ Install : npm install
 
 Run (localhost only) : npm run dev
 
-Run (expose localhost on local network) : npm run host
+Run (expose localhost on local network) : npm run dev-host
 
 Build : npm run build
+
+Preview (localhost only) : npm run preview
+
+Preview (expose localhost on local network) : npm run preview-host
 
 
 # React + Vite
