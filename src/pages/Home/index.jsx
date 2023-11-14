@@ -28,7 +28,7 @@ export default function Home() {
                     {data.map((logement) => (
                         <Link
                             key={`logement-${logement.id}`}
-                            to={logement.title ? (`/logement/${logement.id}/${logement.title.toLowerCase().replace(/ /g, "-")}`) : (`/logement/${logement.id}/mon-super-logement`)} //On rajoute le titre dans l'URL pour plus de clarté
+                            to={`/logement/${logement.id}`}
                         >
                             <Card
                                 title={logement.title}

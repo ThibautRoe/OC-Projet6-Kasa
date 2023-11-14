@@ -14,17 +14,14 @@ import './index.scss'
  * @returns {JSX} Logement Component
  */
 export default function Logement() {
-    const { id, title } = useParams()
+    const { id } = useParams()
     const { data, isLoading, error } = useFetch("../../logements.json")
-    const logement = data.filter(item => item.id === id)
-    let wrongUrlTitle = false
+    let filteredData = []
+    let logement = {}
 
-    if (!isLoading && logement.length > 0) {
-        if (logement[0].title) {
-            wrongUrlTitle = title !== logement[0].title.toLowerCase().replace(/ /g, "-")
-            //title est le prop passé en paramètre de l'URL et logement[0].title est le vrai titre du logement, qu'on a récupéré depuis l'API en filtrant avec l'ID du logement
-            //On formate logement[0].title comme title et on compare les 2 pour traiter le cas de figure où un utilisateur changerait le titre dans l'URL à la main
-        }
+    if (!isLoading) {
+        filteredData = data.filter(item => item.id === id)
+        logement = filteredData[0]
     }
 
     return (
@@ -33,41 +30,39 @@ export default function Logement() {
                 <p>Erreur lors du chargement des données depuis l'API</p>
             ) : isLoading ? (
                 <Loader />
-            ) : logement.length === 0 ? (
-                <Navigate to="/404" />
-            ) : wrongUrlTitle ? (
+            ) : filteredData.length === 0 ? (
                 <Navigate to="/404" />
             ) : (
                 <>
-                    {(logement[0].pictures && logement[0].pictures.length > 0) && (<Slideshow pictures={logement[0].pictures} />)}
+                    {(logement.pictures && logement.pictures.length > 0) && (<Slideshow pictures={logement.pictures} />)}
                     <div className="logement__details">
                         <div className="logement__title-and-location">
-                            <h1 className="logement__title">{logement[0].title && logement[0].title}</h1>
-                            <p className="logement__location">{logement[0].location && logement[0].location}</p>
-                            <Tag tags={logement[0].tags && logement[0].tags} />
+                            <h1 className="logement__title">{logement.title && logement.title}</h1>
+                            <p className="logement__location">{logement.location && logement.location}</p>
+                            <Tag tags={logement.tags && logement.tags} />
                         </div>
                         <div className="logement__host-and-rating">
                             <div className="logement__host">
-                                <p className="logement__host-name">{logement[0].host?.name && logement[0].host.name}</p>
-                                <img className="logement__host-picture" src={logement[0].host?.picture ? logement[0].host.picture : GenericAvatar} alt="Photo de profil" />
+                                <p className="logement__host-name">{logement.host?.name && logement.host.name}</p>
+                                <img className="logement__host-picture" src={logement.host?.picture ? logement.host.picture : GenericAvatar} alt="Photo de profil" />
                             </div>
-                            <Star rating={logement[0].rating && logement[0].rating} />
+                            <Star rating={logement.rating && logement.rating} />
                         </div>
                     </div>
-                    {(logement[0].description || logement[0].equipments) && (
+                    {(logement.description || logement.equipments) && (
                         <div className="collapses collapses--logement">
-                            {logement[0].description && (
+                            {logement.description && (
                                 <Collapse
                                     className="logement"
                                     title="Description"
-                                    contentString={logement[0].description}
+                                    contentString={logement.description}
                                 />
                             )}
-                            {logement[0].equipments && (
+                            {logement.equipments && (
                                 <Collapse
                                     className="logement"
                                     title="Équipements"
-                                    contentTable={logement[0].equipments}
+                                    contentTable={logement.equipments}
                                 />
                             )}
                         </div>
