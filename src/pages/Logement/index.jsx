@@ -15,7 +15,7 @@ import './index.scss'
  */
 export default function Logement() {
     const { id } = useParams()
-    const { data, isLoading, error } = useFetch("../../logements.json")
+    const { data, isLoading, error } = useFetch("../logements.json")
     let filteredData = []
     let logement = {}
 
