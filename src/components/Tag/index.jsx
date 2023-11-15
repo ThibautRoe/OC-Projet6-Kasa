@@ -1,3 +1,5 @@
+import './index.scss'
+
 /**
  * Tag component
  * @function Tag

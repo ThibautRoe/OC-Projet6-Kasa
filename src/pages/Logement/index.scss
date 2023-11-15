@@ -33,26 +33,6 @@
         margin-bottom: functions.getResponsiveSize(10, 20);
     }
 
-    &__tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    &__tag {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: functions.getResponsiveSize(84, 115);
-        min-height: functions.getResponsiveSize(18, 25);
-        background-color: variables.$primary-color;
-        color: variables.$secondary-color;
-        font-size: functions.getResponsiveSize(10, 14);
-        padding: 0 functions.getResponsiveSize(10, 20);
-        border-radius: functions.getResponsiveSize(5, 10);
-        text-align: center;
-    }
-
     &__host-and-rating {
         display: flex;
         flex-direction: column;
