@@ -3,15 +3,15 @@ import Slideshow from '../../components/Slideshow'
 import Tag from '../../components/Tag'
 import Star from '../../components/Star'
 import Collapse from '../../components/Collapse'
-import { useParams } from 'react-router-dom'
-import { useFetch } from '../../utils/hooks'
-import { Navigate } from 'react-router-dom'
 import GenericAvatar from '../../assets/images/generic-avatar.webp'
+import { useParams, Navigate } from 'react-router-dom'
+import { useFetch } from '../../utils/hooks'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} Logement Component
+ * Logement component (page)
+ * @function Logement
+ * @returns {JSX}
  */
 export default function Logement() {
     const { id } = useParams()

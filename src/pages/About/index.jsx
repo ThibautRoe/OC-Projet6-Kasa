@@ -1,13 +1,14 @@
 import Banner from '../../components/Banner'
+import bannerAbout from '../../assets/images/banner-about.webp'
 import Loader from '../../components/Loader'
 import Collapse from '../../components/Collapse'
 import { useFetch } from '../../utils/hooks'
-import bannerAbout from '../../assets/images/banner-about.webp'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} About Component
+ * About component (page)
+ * @function About
+ * @returns {JSX}
  */
 export default function About() {
     const { data, isLoading, error } = useFetch("about.json")

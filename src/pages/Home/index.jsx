@@ -1,14 +1,15 @@
 import Banner from '../../components/Banner'
+import bannerHome from '../../assets/images/banner-home.webp'
 import Loader from '../../components/Loader'
 import Card from '../../components/Card'
 import { useFetch } from '../../utils/hooks'
 import { Link } from 'react-router-dom'
-import bannerHome from '../../assets/images/banner-home.webp'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} Home Component
+ * Home component (page)
+ * @function Home
+ * @returns {JSX}
  */
 export default function Home() {
     const { data, isLoading, error } = useFetch('logements.json')
@@ -31,8 +32,8 @@ export default function Home() {
                             to={`/logement/${logement.id}`}
                         >
                             <Card
-                                title={logement.title}
                                 cover={logement.cover}
+                                title={logement.title}
                             />
                         </Link>
                     ))}

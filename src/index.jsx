@@ -7,6 +7,16 @@ import Logement from './pages/Logement'
 import About from './pages/About'
 import PageNotFound from './pages/PageNotFound'
 
+/**
+ * @file this index.jsx is the root file for this app
+ * @author Thibaut Roegiers
+ * @see https://thibautroe.github.io/OC-Projet6-Kasa/
+ */
+
+/**
+ * Array of routes
+ * @type {Array}
+ */
 const routes = [{
     element: <BasicLayout />,
     children: [
@@ -33,6 +43,10 @@ const routes = [{
     ]
 }]
 
+/**
+ * Router
+ * @type {object}
+ */
 const router = createBrowserRouter(routes, { basename: import.meta.env.DEV ? '/' : '/OC-Projet6-Kasa/' })
 //If server started with npm run dev, import.meta.env.DEV = 1, else 0. It allows us to specify a rule to get the right path for the router when it is launched on Github Pages
 

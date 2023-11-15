@@ -1,8 +1,9 @@
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} Loaded Component
+ * Loaded component
+ * @function Loader
+ * @returns {JSX}
  */
 export default function Loader() {
     return (

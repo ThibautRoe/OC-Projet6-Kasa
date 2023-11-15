@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
 /**
- * 
- * @param {string} url
- * @returns {object} with data {array}, isLoading {boolean} and error {boolean}
+ * useFetch custom hook to handle API calls
+ * @function useFetch
+ * @param {string} [url] - URL of the API
+ * @returns {object} - Object with: data {array}, isLoading {boolean} and error {boolean}
  */
 export function useFetch(url) {
     const [data, setData] = useState([])

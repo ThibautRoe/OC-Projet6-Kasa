@@ -1,12 +1,13 @@
 import './index.scss'
 
 /**
- * 
- * @param {string} title
- * @param {string} cover
- * @returns {JSX} Card Component
+ * Card component
+ * @function Card
+ * @param {string} [cover] - Cover picture of the card
+ * @param {string} [title=Mon super logement] - Title of the card, shown on the picture
+ * @returns {JSX}
  */
-export default function Card({ title, cover }) {
+export default function Card({ cover, title }) {
     return (
         <>
             <article className="card">

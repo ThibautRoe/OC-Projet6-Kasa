@@ -4,8 +4,9 @@ import Footer from '../Footer'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} BasicLayout Component
+ * BasicLayout component
+ * @function BasicLayout
+ * @returns {JSX}
  */
 export default function BasicLayout() {
     return (

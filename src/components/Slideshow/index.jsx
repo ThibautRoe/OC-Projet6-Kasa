@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import './index.scss'
 
 /**
- * 
- * @param {object} pictures 
- * @returns {JSX} Slideshow Component
+ * Slideshow component
+ * @function Slideshow
+ * @param {string[]} pictures - Array of URLs of pictures of the displayed place
+ * @returns {JSX}
  */
 export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)

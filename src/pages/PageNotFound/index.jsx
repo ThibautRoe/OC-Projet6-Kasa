@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} PageNotFound Component
+ * PageNotFound component (page)
+ * @function PageNotFound
+ * @returns {JSX}
  */
 export default function PageNotFound() {
     return (

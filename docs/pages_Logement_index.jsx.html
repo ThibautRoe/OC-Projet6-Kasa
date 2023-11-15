@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Logement/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Logement/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Loader from '../../components/Loader'
+import Slideshow from '../../components/Slideshow'
+import Tag from '../../components/Tag'
+import Star from '../../components/Star'
+import Collapse from '../../components/Collapse'
+import GenericAvatar from '../../assets/images/generic-avatar.webp'
+import { useParams, Navigate } from 'react-router-dom'
+import { useFetch } from '../../utils/hooks'
+import './index.scss'
+
+/**
+ * Logement component (page)
+ * @function Logement
+ * @returns {JSX}
+ */
+export default function Logement() {
+    const { id } = useParams()
+    const { data, isLoading, error } = useFetch("../logements.json")
+    let filteredData = []
+    let logement = {}
+
+    if (!isLoading) {
+        filteredData = data.filter(item => item.id === id)
+        logement = filteredData[0]
+    }
+
+    return (
+        &lt;main className="logement">
+            {error ? (
+                &lt;p>Erreur lors du chargement des données depuis l'API&lt;/p>
+            ) : isLoading ? (
+                &lt;Loader />
+            ) : filteredData.length === 0 ? (
+                &lt;Navigate to="/404" />
+            ) : (
+                &lt;>
+                    {(logement.pictures &amp;&amp; logement.pictures.length > 0) &amp;&amp; (&lt;Slideshow pictures={logement.pictures} />)}
+                    &lt;div className="logement__details">
+                        &lt;div className="logement__title-and-location">
+                            &lt;h1 className="logement__title">{logement.title &amp;&amp; logement.title}&lt;/h1>
+                            &lt;p className="logement__location">{logement.location &amp;&amp; logement.location}&lt;/p>
+                            &lt;Tag tags={logement.tags &amp;&amp; logement.tags} />
+                        &lt;/div>
+                        &lt;div className="logement__host-and-rating">
+                            &lt;div className="logement__host">
+                                &lt;p className="logement__host-name">{logement.host?.name &amp;&amp; logement.host.name}&lt;/p>
+                                &lt;img className="logement__host-picture" src={logement.host?.picture ? logement.host.picture : GenericAvatar} alt="Photo de profil" />
+                            &lt;/div>
+                            &lt;Star rating={logement.rating &amp;&amp; logement.rating} />
+                        &lt;/div>
+                    &lt;/div>
+                    {(logement.description || logement.equipments) &amp;&amp; (
+                        &lt;div className="collapses collapses--logement">
+                            {logement.description &amp;&amp; (
+                                &lt;Collapse
+                                    className="logement"
+                                    title="Description"
+                                    contentString={logement.description}
+                                />
+                            )}
+                            {logement.equipments &amp;&amp; (
+                                &lt;Collapse
+                                    className="logement"
+                                    title="Équipements"
+                                    contentTable={logement.equipments}
+                                />
+                            )}
+                        &lt;/div>
+                    )}
+                &lt;/>
+            )}
+        &lt;/main >
+    )
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#BasicLayout">BasicLayout</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Collapse">Collapse</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Logement">Logement</a></li><li><a href="global.html#PageNotFound">PageNotFound</a></li><li><a href="global.html#Slideshow">Slideshow</a></li><li><a href="global.html#Star">Star</a></li><li><a href="global.html#Tag">Tag</a></li><li><a href="global.html#router">router</a></li><li><a href="global.html#routes">routes</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Nov 15 2023 19:39:58 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom"
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} Header Component
+ * Header component
+ * @function Header
+ * @returns {JSX}
  */
 export default function Header() {
     return (

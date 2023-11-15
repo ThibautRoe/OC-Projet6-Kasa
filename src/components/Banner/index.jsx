@@ -1,10 +1,11 @@
 import './index.scss'
 
 /**
- * 
- * @param {string} image
- * @param {string} title
- * @returns {JSX} Banner Component
+ * Banner component
+ * @function Banner
+ * @param {string} image - Image to display in banner
+ * @param {string} [title] - Title to display in banner
+ * @returns {JSX}
  */
 export default function Banner({ image, title }) {
     return (

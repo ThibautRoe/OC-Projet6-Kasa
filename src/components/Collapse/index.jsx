@@ -1,12 +1,13 @@
 import './index.scss'
 
 /**
- * 
- * @param {string} className
- * @param {string} title
- * @param {string} contentString
- * @param {object} contentTable
- * @returns {JSX} Collapse Component
+ * Collapse component
+ * @function Collapse
+ * @param {string} className - Appended to default class to determine on which page the collapse is added for CSS rules
+ * @param {string} title - Collapse title, used in <summary> tag
+ * @param {string} [contentString] - Collapse details as string for about page
+ * @param {string[]} [contentTable] - Collapse details as an array of strings for logement page
+ * @returns {JSX}
  */
 export default function Collapse({ className, title, contentString, contentTable }) {
     return (

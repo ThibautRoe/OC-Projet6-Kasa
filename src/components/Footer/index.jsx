@@ -2,8 +2,9 @@ import { NavLink } from 'react-router-dom'
 import './index.scss'
 
 /**
- * 
- * @returns {JSX} Footer Component
+ * Footer component
+ * @function Footer
+ * @returns {JSX}
  */
 export default function Footer() {
     return (
