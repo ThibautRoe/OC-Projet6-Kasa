@@ -10,12 +10,11 @@ export default function Slideshow({ pictures }) {
     const [slideIndex, setSlideIndex] = useState(1)
     const [pictureClassName, setPictureClassName] = useState("slideshow__picture slideshow__picture--fadein")
 
-    //Handle prev / next picture loading and add a fadeout / fadein transition using className and CSS
+    //Handle prev / next picture loading and add a fadeout transition using timeout, className and CSS
     function prevPicture() {
         setPictureClassName("slideshow__picture slideshow__picture--fadeout")
         setTimeout(() => {
             setSlideIndex(slideIndex === 1 ? (pictures.length) : (slideIndex - 1))
-            setPictureClassName("slideshow__picture slideshow__picture--fadein")
         }, 500)
     }
 
@@ -23,12 +22,18 @@ export default function Slideshow({ pictures }) {
         setPictureClassName("slideshow__picture slideshow__picture--fadeout")
         setTimeout(() => {
             setSlideIndex(slideIndex > (pictures.length - 1) ? 1 : (slideIndex + 1))
-            setPictureClassName("slideshow__picture slideshow__picture--fadein")
         }, 500)
     }
 
-    // Handle left / right arrow key press on keyboard to change picture
+    //Add a fadein transition on new image, only after being fully loaded, using className and CSS
+    function transitionAfterImageLoad() {
+        setPictureClassName("slideshow__picture slideshow__picture--fadein");
+    }
+
+    //Handle left / right arrow key press on keyboard to change picture, only if more than 1 picture
     useEffect(() => {
+        if (pictures.length <= 1) { return }
+
         function keyPressHandler(e) {
             if (e.key === "ArrowLeft") { prevPicture() }
             if (e.key === "ArrowRight") { nextPicture() }
@@ -43,7 +48,12 @@ export default function Slideshow({ pictures }) {
 
     return (
         <div className="slideshow">
-            <img className={pictureClassName} src={pictures[slideIndex - 1]} alt="Photo d'un logement" />
+            <img
+                className={pictureClassName}
+                src={pictures[slideIndex - 1]}
+                alt="Photo d'un logement"
+                onLoad={transitionAfterImageLoad}
+            />
             {(pictures.length > 1) && (
                 <>
                     <p className="slideshow__count">{`${slideIndex}/${pictures.length}`}</p>
