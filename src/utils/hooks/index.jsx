@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react'
 /**
  * 
  * @param {string} url
- * @returns {object} data
- * @returns {boolean} isLoading
- * @returns {boolean} error
+ * @returns {object} with data {array}, isLoading {boolean} and error {boolean}
  */
 export function useFetch(url) {
     const [data, setData] = useState([])
@@ -24,7 +22,10 @@ export function useFetch(url) {
                 console.log(err)
                 setError(true)
             } finally {
-                setLoading(false)
+                const timeout = 0 //Modify in order to test Loader component
+                setTimeout(() => {
+                    setLoading(false)
+                }, timeout)
             }
         }
         fetchData()
