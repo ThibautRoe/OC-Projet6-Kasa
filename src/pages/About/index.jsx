@@ -10,7 +10,6 @@ import './index.scss'
  * @returns {JSX} About Component
  */
 export default function About() {
-    console.log(useFetch("about.json"))
     const { data, isLoading, error } = useFetch("about.json")
 
     return (
