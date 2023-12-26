@@ -1,15 +1,33 @@
-NodeJS version used for this projet : 20.9.0
+# Kasa
 
-NPM version used for this projet : 10.1.0
+Project #6 of OpenClassrooms certification / Fullstack Web Developer
 
-Used Vite with @vitejs/plugin-react-swc
+Develop the front-end of a peer-to-peer real estate rental platform using React
 
-Install : npm install
+## Preview
 
-Run : npm run dev (or dev-host to expose localhost on local network)
+-   https://oc-6-kasa.vercel.app/
+-   Based on this Figma design: https://www.figma.com/file/0bqnfjXHmQzZLJkiOz1kCU/OC-P6---Kasa?type=design&mode=design&t=RxVv8W9HimR5F41r-1
 
-Build : npm run build
+## Technologies
 
-Preview : npm run preview (or preview-host to expose localhost on local network)
+-   [React](https://react.dev/)
+-   [Vite](https://vitejs.dev/)
+-   [Saas](https://sass-lang.com/)
 
-⚠️ Important ⚠️ When running Preview, React Router is set with "/OC-Projet6-Kasa/" as basename, in order for it to work on GitHub Pages. For it to work on localhost, put all content of "dist" folder after a build inside a new subfolder "OC-Projet6-Kasa" and go to http://localhost:4173/OC-Projet6-Kasa/ instead of http://localhost:4173/
+## 🛠️ Install Dependencies
+
+```bash
+npm install
+```
+
+## 🧑🏻‍💻 Usage
+
+```bash
+npm run dev         # Start dev server, default server: http://localhost:5173
+npm run build       # Build for production
+npm run preview     # Locally preview production build, default server: http://localhost:4173
+```
+
+_Tested with Node.js 20.9.0 and NPM 10.1.0_\
+_Custom build command for Vercel : "npm run build && cp ./dist/index.html ./dist/404.html"_
